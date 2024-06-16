@@ -265,3 +265,25 @@ p {
     color: #2980b9;
 }
 
+/* Social Icons Styling */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white; /* Change to your preferred color */
+    margin-right: 15px;
+    font-size: 1.5em; /* Adjust size as needed */
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #3498db; /* Change to your hover color */
+}
+
+.social-icons i {
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle;
+}
