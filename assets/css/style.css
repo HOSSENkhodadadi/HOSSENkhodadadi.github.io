@@ -51,7 +51,7 @@ nav ul li a:hover {
 }
 
 #home {
-    background-image: url('images/background.PNG');
+    background-image: url('../../images/background.PNG');
     position: relative;
 }
 
