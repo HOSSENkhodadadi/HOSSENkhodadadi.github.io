@@ -1,5 +1,3 @@
-css
-Copy code
 /* General Reset */
 body, ul, li {
     margin: 0;
@@ -132,6 +130,7 @@ p {
 .about-section {
     padding: 60px 20px;
     background-color: #fff;
+    
 }
 
 .about-content {
@@ -201,7 +200,8 @@ p {
 /* Projects Section */
 .projects-section {
     padding: 60px 20px;
-    background-color: #f4f4f4; /* Light background for contrast */
+    background-color: #FFECEC; /* Light background for contrast */
+    /*background-image: url('../../images/mountain.jpg');*/
 }
 
 .projects-section h2 {
