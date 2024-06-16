@@ -6,6 +6,8 @@
     <title>My Personal Page</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -24,13 +26,14 @@
 
     <section id="home" class="section">
         <div class="overlay">
+            <p1>my name is</p1>
             <h1>Hossein Khodadadi</h1>
-            <p>I am a Researcher and Developer in Artificial Intelligence, and Software Engineering. Currently I'm studying Data Science at Politecnico di Torino. Please scroll down to know more about me.</p>
+            <p>I am a passionate researcher  in Artificial Intelligence, trying to expand my skills in Software Engineering. Currently I'm studying Data Science at Politecnico di Torino. Please scroll down to know more about me.</p>
             <div class="social-icons">
-                <a href="https://twitter.com" target="_blank">Twitter</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="mailto:example@example.com">Email</a>
+                <a href="https://x.com/HoseineKhodadad" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://github.com/HOSSENkhodadadi" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/hosseinekhodadadi/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:hosseinekhodadadi@gmail.com"><i class="fas fa-envelope"></i> Email</a>
             </div>
             <div class="scroll-down">
                 <a href="#about">&#x25BC;</a>
@@ -38,14 +41,101 @@
         </div>
     </section>
 
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/me.jpeg" alt="Your Name">
+                </div>
+                <div class="about-info">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm Hossein Khodadadi, a passionate Data Science enthusiast. Currently, I'm pursuing my studies in Data Science at Politecnico di Torino.</p>
+                    <p>Feel free to explore my projects in Github to know more about my work. I'm always open to discussing new opportunities and collaborations.</p>
+                    <ul class="contact-info">
+                        <li><strong>Email:</strong> hosseinekhodadadi@gamil.com</li>
+                        <li><strong>Location:</strong> Torino, Italy</li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1LrvCbxVrPm-jxv5NIo-5FrVJ8c5VKHf0/view?usp=sharing" class="btn-cv" download>Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
     <!-- Add more sections for each menu item -->
-    <section id="about" class="section">...</section>
-    <section id="education" class="section">...</section>
-    <section id="projects" class="section">...</section>
-    <section id="publications" class="section">...</section>
-    <section id="skills" class="section">...</section>
-    <section id="contact" class="section">...</section>
+    <section id="projects" class="section"></section>
+    <section id="publications" class="section"></section>
+    <section id="skills" class="section"></section>
+    <section id="contact" class="section"></section>
 
     <script src="assets/js/script.js"></script>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+<section id="projects" class="projects-section">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="images/project_images/proj_2_AlexNet.png" alt="Project 2">
+                <div class="project-info">
+                    <h3>Caltech Classification and Fine Tuning on AlexNet (Classification, Deep Learning):</h3>
+                    <p>AlexNet model was used to predict in low data regimes and a large number of classes. different fine-tuning techniques were used to improve the accuracy. Tech: Weights&Biasses, Pytorch</p>
+                    <a href="https://github.com/HOSSENkhodadadi/Projects/tree/main/caltech_classification_fine_tuning_alexNet" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="images/project_images/proj1_Agent_2.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Reinforcement Learning on Game Agent Training for Quixo Board Game (RL, Deep RL):</h3>
+                    <p>Min-Max algorithm was implemented to play Quixo game with 95% win rate against a random player. Tech: Python, Pytorch</p>
+                    <a href="https://github.com/HOSSENkhodadadi/Quixo_Game_Player_Min_Max" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="images/project_images/proj3_FL.webp" alt="Project 2">
+                <div class="project-info">
+                    <h3>A Novel Approach for Improving Generalization in Federated Learning Through Corrective Gradient Weights:</h3>
+                    <p>he Federated Learning paradigm was implemented to train a central Neural Network Model without intruding the clients privacy, the model improved by adding the Corrective Gradient Weights . Tech: Python, PyTorch</p>
+                    <a href="https://github.com/HOSSENkhodadadi/Projects/tree/main/A%20Novel%20Approach%20for%20Improving%20Generalization%20in%20Federated" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="images/project_images/proj4_mfcc.png" alt="Project 2">
+                <div class="project-info">
+                    <h3>Audio Intent Detection Using MFCC </h3>
+                    <p>A deep learning model was designed to classify audio files using MFCC method. Tech: Python, TensorFlow, Keras.</p>
+                    <a href="https://github.com/HOSSENkhodadadi/Projects/tree/main/Intent%20Detection%20on%20the%20Fluent%20Speech%20Commands" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <!-- More project cards can be added similarly -->
+        </div>
+    </div>
+</section>
+
+
 </body>
 </html>
