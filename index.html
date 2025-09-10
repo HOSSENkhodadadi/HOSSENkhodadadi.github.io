@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="images/x-icon.webp" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 </head>
 <body>
@@ -23,7 +24,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
+                <li><a href="#articles">Articles</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -36,7 +37,7 @@
             <h1>Hossein Khodadadi</h1>
             <p>I am a passionate Data Science enthusiast, trying to expand my skills in Software Engineering. Currently I'm studying Data Science at Politecnico di Torino. Please scroll down to know more about me.</p>
             <div class="social-icons">
-                <a href="https://x.com/HoseineKhodadad" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://x.com/HoseineKhodadad" target="_blank"><i class="fab fa-twitter"></i> X</a>
                 <a href="https://github.com/HOSSENkhodadadi" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://www.linkedin.com/in/hosseinekhodadadi/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="mailto:hosseinekhodadadi@gmail.com"><i class="fas fa-envelope"></i> Email</a>
@@ -48,6 +49,7 @@
     </section>
 
     <section id="about" class="about-section">
+        <div id="particles-js"></div>
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
@@ -55,7 +57,7 @@
                 </div>
                 <div class="about-info">
                     <h2>About Me</h2>
-                    <p>Hello! I'm Hossein Khodadadi.I’m a Master’s student in Data Science and Engineering at Politecnico di Torino, passionate about Machine Learning, NLP, and Software Engineering. Lately, I’ve been diving deep into Large Language Models and Computational Intelligence. I started my journey with a Bachelor’s in Electrical and Telecommunication Engineering, ranking in the top 5 of my class (GPA: 3.54/4) at one of top universities in my home country. I’m always eager to learn, grow, and tackle new challenges.</p>
+                    <p>Hello! I'm Hossein Khodadadi.I'm a Master's student in Data Science and Engineering at Politecnico di Torino, passionate about Machine Learning, NLP, and Software Engineering. Lately, I've been diving deep into Large Language Models and Computational Intelligence. I started my journey with a Bachelor's in Electrical and Telecommunication Engineering, ranking in the top 5 of my class (GPA: 3.54/4) at one of top universities in my home country. I'm always eager to learn, grow, and tackle new challenges.</p>
                     <p>Feel free to explore my projects in Github to know more about my work. I'm always open to discussing new opportunities and collaborations.</p>
                     <ul class="contact-info">
                         <li><strong>Email:</strong> hosseinekhodadadi@gamil.com</li>
@@ -134,10 +136,296 @@
         </div>
     </div>
 </section>
-<!-- Add more sections for each menu item -->
-<section id="publications" class="section">Under Construction &#128526</section>
-<section id="skills" class="section">Under Construction &#128526</section>
-<section id="contact" class="section">Under Construction &#128526</section>
-<section id="education" class="section">Under Construction &#128526</section>
+<!-- Articles Section -->
+<section id="articles" class="articles-section">
+    <div id="particles-js-articles"></div>
+    <div class="container">
+        <h2>Articles</h2>
+        <div class="articles-grid">
+            <!-- Article 1 -->
+            <div class="article-card">
+                <img src="images/project_images/proj3_FL.webp" alt="Federated Learning Article">
+                <div class="article-info">
+                    <h3>Improving Generalization in Federated Learning Through Corrective Gradient Weights</h3>
+                    <p>An in-depth exploration of how corrective gradient weights can enhance model generalization in federated learning environments, addressing privacy-preserving machine learning challenges.</p>
+                    <div class="article-meta">
+                        <span class="article-date">Published: March 15, 2024</span>
+                    </div>
+                    <a href="articles/federated-learning-article.html" class="article-link">Read Full Article</a>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-card">
+                <img src="images/project_images/proj_2_AlexNet.png" alt="Deep Learning Article">
+                <div class="article-info">
+                    <h3>Fine-Tuning Strategies for Deep Learning Models in Low-Data Regimes</h3>
+                    <p>A comprehensive guide to effective fine-tuning techniques for neural networks when working with limited datasets, focusing on transfer learning and data augmentation strategies.</p>
+                    <div class="article-meta">
+                        <span class="article-date">Published: February 28, 2024</span>
+                    </div>
+                    <a href="articles/deep-learning-finetuning-article.html" class="article-link">Read Full Article</a>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-card">
+                <img src="images/project_images/proj4_mfcc.png" alt="Audio Processing Article">
+                <div class="article-info">
+                    <h3>Audio Intent Detection Using MFCC: A Deep Learning Approach</h3>
+                    <p>Exploring the application of Mel-Frequency Cepstral Coefficients (MFCC) in audio processing for intent detection, covering feature extraction and neural network architectures.</p>
+                    <div class="article-meta">
+                        <span class="article-date">Published: February 10, 2024</span>
+                    </div>
+                    <a href="articles/audio-intent-detection-article.html" class="article-link">Read Full Article</a>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="article-card">
+                <img src="images/project_images/proj1_Agent_2.jpg" alt="Reinforcement Learning Article">
+                <div class="article-info">
+                    <h3>Reinforcement Learning in Board Games: A Min-Max Approach</h3>
+                    <p>An analysis of implementing reinforcement learning algorithms for board game AI, with practical examples from the Quixo game implementation and performance optimization techniques.</p>
+                    <div class="article-meta">
+                        <span class="article-date">Published: January 22, 2024</span>
+                    </div>
+                    <a href="articles/reinforcement-learning-games-article.html" class="article-link">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Education Section -->
+<section id="education" class="education-section">
+    <div id="particles-js-education"></div>
+    <div class="container">
+        <h2>Education</h2>
+        <div class="education-timeline">
+            <div class="education-item">
+                <div class="education-year">2022 - Present</div>
+                <div class="education-content">
+                    <h3>Master's Degree in Data Science and Engineering</h3>
+                    <h4>Politecnico di Torino, Italy</h4>
+                    <p>Specializing in Machine Learning, Natural Language Processing, and Software Engineering. Currently pursuing advanced studies in Large Language Models and Computational Intelligence.</p>
+                    <ul class="education-details">
+                        <li>Focus: Machine Learning, NLP, Deep Learning</li>
+                        <li>Research: Federated Learning, Computer Vision</li>
+                        <li>Languages: Python, R, SQL, JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-year">2018 - 2022</div>
+                <div class="education-content">
+                    <h3>Bachelor's Degree in Electrical and Telecommunication Engineering</h3>
+                    <h4>Top University in Home Country</h4>
+                    <p>Graduated in the top 5 of the class with a GPA of 3.54/4.0. Focused on signal processing, telecommunications, and embedded systems.</p>
+                    <ul class="education-details">
+                        <li>GPA: 3.54/4.0 (Top 5% of class)</li>
+                        <li>Focus: Signal Processing, Embedded Systems</li>
+                        <li>Languages: C++, MATLAB, Verilog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <div id="particles-js-skills"></div>
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">R</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">SQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">C++</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Machine Learning & AI</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span class="skill-name">Deep Learning</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">NLP</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Computer Vision</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Reinforcement Learning</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Federated Learning</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Frameworks & Tools</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span class="skill-name">PyTorch</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">TensorFlow</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Scikit-learn</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Pandas & NumPy</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git & GitHub</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div id="particles-js-contact"></div>
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>I'm always open to discussing new opportunities, collaborations, or just having a chat about data science and technology. Feel free to reach out!</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hosseinekhodadadi@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Torino, Italy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h4>University</h4>
+                            <p>Politecnico di Torino</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/HOSSENkhodadadi" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hosseinekhodadadi/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://x.com/HoseineKhodadad" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                        <span>X</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1yF6i6cwjFwAmKHOk7Q_PkM34PqJAAX7T/view?usp=sharing" target="_blank" class="social-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>CV</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send me a message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
