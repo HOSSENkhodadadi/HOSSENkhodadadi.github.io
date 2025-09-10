@@ -23,12 +23,34 @@ header {
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Navigation */
 nav ul {
     display: flex;
     justify-content: center;
     padding: 1rem;
+    margin: 0;
 }
 
 nav ul li {
@@ -112,17 +134,82 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Mobile header layout */
+    header {
+        justify-content: space-between;
+    }
+    
+    /* Show hamburger menu */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* Hide navigation by default */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    /* Show navigation when active */
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    /* Home section mobile fixes */
     h1 {
         font-size: 2rem;
     }
+    
     p {
         font-size: 1rem;
     }
-    nav ul {
-        flex-direction: column;
+    
+    .overlay {
+        padding: 1rem;
+        max-width: 95%;
+        margin: 1rem auto;
     }
-    nav ul li {
-        margin: 10px 0;
+    
+    .social-icons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .social-icons a {
+        font-size: 1.2rem;
+        margin: 0 5px;
+    }
+    
+    /* Hamburger menu animation */
+    .hamburger-menu.active .hamburger-line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger-menu.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active .hamburger-line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
 
