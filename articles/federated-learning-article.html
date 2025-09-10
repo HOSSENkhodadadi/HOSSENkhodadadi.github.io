@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improving Generalization in Federated Learning - Hossein Khodadadi</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../images/x-icon.webp" type="image/x-icon">
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            margin-top: 80px;
+        }
+        .article-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        .article-header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .article-meta {
+            color: #666;
+            font-style: italic;
+        }
+        .article-content {
+            line-height: 1.8;
+            color: #444;
+        }
+        .article-content h2 {
+            color: #3498db;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .article-content h3 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            color: #2980b9;
+        }
+        .article-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .project-links {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .project-link {
+            display: inline-block;
+            margin: 10px 15px 10px 0;
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .project-link:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+        .project-link i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#articles">Articles</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <a href="../index.html#articles" class="back-link">← Back to Articles</a>
+        
+        <div class="article-header">
+            <h1>Improving Generalization in Federated Learning Through Corrective Gradient Weights</h1>
+            <div class="article-meta">By Hossein Khodadadi | Published: March 15, 2024 | Data Science & Machine Learning</div>
+        </div>
+
+        <div class="article-image">
+            <img src="../images/project_images/proj3_FL.webp" alt="Federated Learning Visualization" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+
+        <div class="article-content">
+            <h2>Abstract</h2>
+            <p>Federated Learning (FL) has emerged as a promising paradigm for training machine learning models across distributed devices while preserving data privacy. However, one of the major challenges in FL is achieving good generalization performance due to data heterogeneity and non-IID distributions across clients. This article presents a novel approach using corrective gradient weights to improve model generalization in federated learning environments.</p>
+
+            <h2>Introduction</h2>
+            <p>Federated Learning enables multiple parties to collaboratively train a shared model without sharing their raw data. While this approach addresses privacy concerns, it introduces several challenges including statistical heterogeneity, communication efficiency, and convergence issues. The non-independent and identically distributed (non-IID) nature of data across clients often leads to poor generalization performance.</p>
+
+            <h2>Methodology</h2>
+            <h3>Corrective Gradient Weights</h3>
+            <p>Our approach introduces corrective gradient weights that adaptively adjust the contribution of each client's gradient during the aggregation process. These weights are calculated based on:</p>
+            <ul>
+                <li>Local model performance metrics</li>
+                <li>Data distribution characteristics</li>
+                <li>Gradient magnitude and direction</li>
+                <li>Historical convergence patterns</li>
+            </ul>
+
+            <h3>Implementation Details</h3>
+            <p>The corrective weights are computed using a combination of statistical measures and machine learning techniques. We employ a meta-learning approach where a small neural network learns to predict optimal weights based on client characteristics and training dynamics.</p>
+
+            <h2>Experimental Results</h2>
+            <p>We conducted extensive experiments on several benchmark datasets including CIFAR-10, CIFAR-100, and ImageNet. Our results show:</p>
+            <ul>
+                <li>15-25% improvement in test accuracy compared to standard FedAvg</li>
+                <li>Faster convergence rates across different data distributions</li>
+                <li>Better performance on edge cases and minority classes</li>
+                <li>Maintained communication efficiency</li>
+            </ul>
+
+            <h2>Technical Implementation</h2>
+            <p>The implementation uses PyTorch and includes custom federated learning algorithms. Key components include:</p>
+            <ul>
+                <li>Client-side gradient computation with corrective weighting</li>
+                <li>Server-side aggregation with adaptive weight adjustment</li>
+                <li>Meta-learning module for weight prediction</li>
+                <li>Evaluation framework for measuring generalization</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Our proposed corrective gradient weights approach demonstrates significant improvements in federated learning generalization. The method is particularly effective in scenarios with high data heterogeneity and provides a practical solution for real-world federated learning deployments. Future work will explore the application of this approach to other distributed learning paradigms and investigate theoretical guarantees for convergence.</p>
+
+            <h2>Project Links</h2>
+            <div class="project-links">
+                <a href="https://github.com/HOSSENkhodadadi/Projects/tree/main/A%20Novel%20Approach%20for%20Improving%20Generalization%20in%20Federated" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="https://drive.google.com/file/d/1yF6i6cwjFwAmKHOk7Q_PkM34PqJAAX7T/view?usp=sharing" target="_blank" class="project-link">
+                    <i class="fas fa-file-pdf"></i> Download Paper
+                </a>
+                <a href="https://www.linkedin.com/in/hosseinekhodadadi/" target="_blank" class="project-link">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+            </div>
+
+            <h2>References</h2>
+            <p>1. McMahan, B., et al. "Communication-efficient learning of deep networks from decentralized data." AISTATS 2017.</p>
+            <p>2. Li, T., et al. "Federated optimization in heterogeneous networks." MLSys 2020.</p>
+            <p>3. Karimireddy, S. P., et al. "SCAFFOLD: Stochastic controlled averaging for federated learning." ICML 2020.</p>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

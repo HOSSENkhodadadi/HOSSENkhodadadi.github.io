@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine-Tuning Strategies for Deep Learning Models - Hossein Khodadadi</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../images/x-icon.webp" type="image/x-icon">
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            margin-top: 80px;
+        }
+        .article-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        .article-header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .article-meta {
+            color: #666;
+            font-style: italic;
+        }
+        .article-content {
+            line-height: 1.8;
+            color: #444;
+        }
+        .article-content h2 {
+            color: #3498db;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .article-content h3 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            color: #2980b9;
+        }
+        .article-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .project-links {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .project-link {
+            display: inline-block;
+            margin: 10px 15px 10px 0;
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .project-link:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+        .project-link i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#articles">Articles</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <a href="../index.html#articles" class="back-link">← Back to Articles</a>
+        
+        <div class="article-header">
+            <h1>Fine-Tuning Strategies for Deep Learning Models in Low-Data Regimes</h1>
+            <div class="article-meta">By Hossein Khodadadi | Published: February 28, 2024 | Deep Learning & Transfer Learning</div>
+        </div>
+
+        <div class="article-image">
+            <img src="../images/project_images/proj_2_AlexNet.png" alt="AlexNet Architecture Visualization" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+
+        <div class="article-content">
+            <h2>Abstract</h2>
+            <p>Transfer learning through fine-tuning pre-trained models has become a cornerstone of modern deep learning, especially when working with limited datasets. This comprehensive guide explores effective fine-tuning strategies for neural networks in low-data regimes, covering theoretical foundations, practical techniques, and real-world applications.</p>
+
+            <h2>Introduction</h2>
+            <p>In many real-world scenarios, we face the challenge of training deep learning models with limited data. Traditional approaches often fail due to overfitting and poor generalization. Transfer learning, particularly fine-tuning pre-trained models, offers a powerful solution by leveraging knowledge from large-scale datasets and adapting it to specific tasks.</p>
+
+            <h2>Understanding Transfer Learning</h2>
+            <h3>Feature Extraction vs. Fine-Tuning</h3>
+            <p>There are two main approaches to transfer learning:</p>
+            <ul>
+                <li><strong>Feature Extraction:</strong> Freeze the pre-trained model and only train the classifier head</li>
+                <li><strong>Fine-Tuning:</strong> Unfreeze some or all layers and train with a lower learning rate</li>
+            </ul>
+
+            <h3>When to Use Each Approach</h3>
+            <p>Feature extraction works best when:</p>
+            <ul>
+                <li>Your dataset is very small (< 1000 samples)</li>
+                <li>Your task is similar to the pre-training task</li>
+                <li>You have limited computational resources</li>
+            </ul>
+
+            <p>Fine-tuning is preferred when:</p>
+            <ul>
+                <li>You have a moderate amount of data (1000-10000 samples)</li>
+                <li>Your task differs significantly from pre-training</li>
+                <li>You need the best possible performance</li>
+            </ul>
+
+            <h2>Fine-Tuning Strategies</h2>
+            <h3>1. Progressive Unfreezing</h3>
+            <p>Start by training only the classifier, then gradually unfreeze layers from top to bottom. This approach helps prevent catastrophic forgetting and allows the model to adapt gradually.</p>
+
+            <h3>2. Differential Learning Rates</h3>
+            <p>Use different learning rates for different layers. Typically, use a lower learning rate for earlier layers and a higher rate for later layers that are more task-specific.</p>
+
+            <h3>3. Cyclical Learning Rates</h3>
+            <p>Implement learning rate schedules that cycle between high and low values. This can help escape local minima and improve generalization.</p>
+
+            <h2>Data Augmentation Techniques</h2>
+            <p>In low-data regimes, data augmentation is crucial for improving model robustness:</p>
+            <ul>
+                <li><strong>Geometric Transformations:</strong> Rotation, translation, scaling, flipping</li>
+                <li><strong>Color Space Augmentation:</strong> Brightness, contrast, saturation adjustments</li>
+                <li><strong>Advanced Techniques:</strong> Mixup, CutMix, AutoAugment</li>
+                <li><strong>Domain-Specific Augmentation:</strong> Text augmentation for NLP, audio augmentation for speech</li>
+            </ul>
+
+            <h2>Regularization Techniques</h2>
+            <h3>Dropout and Batch Normalization</h3>
+            <p>Proper use of dropout and batch normalization can significantly improve generalization in low-data scenarios. Consider adjusting dropout rates based on your dataset size.</p>
+
+            <h3>Weight Decay and Early Stopping</h3>
+            <p>Implement weight decay to prevent overfitting and use early stopping to find the optimal training duration.</p>
+
+            <h2>Practical Implementation</h2>
+            <h3>Code Example: Fine-tuning with PyTorch</h3>
+            <pre><code>
+# Example fine-tuning setup
+model = torchvision.models.resnet50(pretrained=True)
+num_classes = 10
+
+# Replace the classifier
+model.fc = nn.Linear(model.fc.in_features, num_classes)
+
+# Freeze all parameters first
+for param in model.parameters():
+    param.requires_grad = False
+
+# Unfreeze the classifier
+for param in model.fc.parameters():
+    param.requires_grad = True
+
+# Use different learning rates
+optimizer = torch.optim.Adam([
+    {'params': model.fc.parameters(), 'lr': 1e-3},
+    {'params': model.layer4.parameters(), 'lr': 1e-4}
+])
+            </code></pre>
+
+            <h2>Evaluation and Monitoring</h2>
+            <p>Proper evaluation is crucial in low-data regimes:</p>
+            <ul>
+                <li>Use stratified k-fold cross-validation</li>
+                <li>Monitor both training and validation metrics</li>
+                <li>Use confidence intervals for performance estimates</li>
+                <li>Consider using holdout test sets for final evaluation</li>
+            </ul>
+
+            <h2>Common Pitfalls and Solutions</h2>
+            <h3>Overfitting</h3>
+            <p><strong>Problem:</strong> Model performs well on training data but poorly on validation data.</p>
+            <p><strong>Solutions:</strong> Increase regularization, reduce model complexity, use more data augmentation, or collect more data.</p>
+
+            <h3>Catastrophic Forgetting</h3>
+            <p><strong>Problem:</strong> Model forgets pre-trained knowledge during fine-tuning.</p>
+            <p><strong>Solutions:</strong> Use lower learning rates, progressive unfreezing, or regularization techniques like elastic weight consolidation.</p>
+
+            <h2>Case Study: Caltech Classification</h2>
+            <p>In our Caltech classification project, we successfully fine-tuned AlexNet on a limited dataset using the following approach:</p>
+            <ol>
+                <li>Started with feature extraction using pre-trained AlexNet</li>
+                <li>Implemented progressive unfreezing starting from the classifier</li>
+                <li>Used aggressive data augmentation including random crops and color jittering</li>
+                <li>Applied differential learning rates with 10x lower rate for early layers</li>
+                <li>Achieved 85% accuracy on a 101-class dataset with only 100 samples per class</li>
+            </ol>
+
+            <h2>Conclusion</h2>
+            <p>Fine-tuning in low-data regimes requires careful consideration of multiple factors including data augmentation, regularization, learning rate scheduling, and evaluation strategies. The key is to balance between leveraging pre-trained knowledge and adapting to the specific task while preventing overfitting. With the right approach, it's possible to achieve excellent results even with limited data.</p>
+
+            <h2>Project Links</h2>
+            <div class="project-links">
+                <a href="https://github.com/HOSSENkhodadadi/Projects/tree/main/caltech_classification_fine_tuning_alexNet" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="https://drive.google.com/file/d/1yF6i6cwjFwAmKHOk7Q_PkM34PqJAAX7T/view?usp=sharing" target="_blank" class="project-link">
+                    <i class="fas fa-file-pdf"></i> Download CV
+                </a>
+                <a href="https://www.linkedin.com/in/hosseinekhodadadi/" target="_blank" class="project-link">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+            </div>
+
+            <h2>References</h2>
+            <p>1. Yosinski, J., et al. "How transferable are features in deep neural networks?" NIPS 2014.</p>
+            <p>2. Howard, J., & Ruder, S. "Universal language model fine-tuning for text classification." ACL 2018.</p>
+            <p>3. He, K., et al. "Deep residual learning for image recognition." CVPR 2016.</p>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
