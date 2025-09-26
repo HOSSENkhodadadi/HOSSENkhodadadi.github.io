@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reinforcement Learning in Board Games - Hossein Khodadadi</title>
+    <title>From Retrieval to Results – Hossein Khodadadi</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" href="../images/x-icon.webp" type="image/x-icon">
     <style>
@@ -22,8 +22,7 @@
         }
         .article-header h1 {
             color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.2em;
         }
         .article-meta {
             color: #666;
@@ -38,367 +37,59 @@
             margin-top: 30px;
             margin-bottom: 15px;
         }
-        .article-content h3 {
-            color: #555;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .back-link:hover {
-            color: #2980b9;
-        }
-        .article-image {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .project-links {
-            margin: 30px 0;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-        }
-        .project-link {
-            display: inline-block;
-            margin: 10px 15px 10px 0;
-            padding: 12px 20px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .project-link:hover {
-            background-color: #2980b9;
-            color: white;
-        }
-        .project-link i {
-            margin-right: 8px;
+        .article-content strong {
+            color: #000;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="hamburger-menu" id="hamburger-menu">
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-        </div>
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="../index.html#home">Home</a></li>
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#education">Education</a></li>
-                <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#articles">Articles</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <div class="article-container">
-        <a href="../index.html#articles" class="back-link">← Back to Articles</a>
-        
         <div class="article-header">
-            <h1>Reinforcement Learning in Board Games: A Min-Max Approach</h1>
-            <div class="article-meta">By Hossein Khodadadi | Published: January 22, 2024 | Reinforcement Learning & Game AI</div>
-        </div>
-
-        <div class="article-image">
-            <img src="../images/project_images/proj1_Agent_2.jpg" alt="Game Agent Visualization" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <h1>From Retrieval to Results: Bridging AI and Business with RAG on MS MARCO</h1>
+            <div class="article-meta">By Hossein Khodadadi</div>
         </div>
 
         <div class="article-content">
-            <h2>Abstract</h2>
-            <p>This article explores the application of reinforcement learning algorithms in board game AI, with a focus on the Min-Max algorithm and its variants. Using the Quixo board game as a case study, we demonstrate how traditional game theory approaches can be enhanced with modern machine learning techniques to create highly effective game-playing agents.</p>
+            <p>As engineers and data scientists, we often focus deeply on model development and evaluation—sometimes at the expense of understanding how to communicate our work effectively to non-technical stakeholders. This realization hit home during my participation in the <strong>Artificial Intelligence and Data Science Prototype (ADSP)</strong> course at <strong>Politecnico di Torino</strong>, developed in collaboration with the <strong>LINKS Foundation</strong>.</p>
 
-            <h2>Introduction</h2>
-            <p>Board games have long served as a testing ground for artificial intelligence algorithms. From chess to Go, the challenge of creating intelligent game-playing agents has driven significant advances in computer science. This article focuses on the Quixo board game and how we can apply reinforcement learning principles to create an agent that achieves a 95% win rate against random players.</p>
+            <p>This program not only deepened our technical skills but also helped us translate research into real-world, business-relevant outcomes. One of the key achievements of our team was enhancing a <strong>Retrieval-Augmented Generation (RAG)</strong> system on the <strong>MS MARCO</strong> dataset, resulting in a <strong>7.1% improvement</strong> in the <strong>Mean Reciprocal Rank (MRR)</strong> metric.</p>
 
-            <h2>Understanding Quixo</h2>
-            <h3>Game Rules</h3>
-            <p>Quixo is a strategic board game played on a 5×5 grid where players take turns placing their pieces. The objective is to create a line of five pieces of your color (horizontally, vertically, or diagonally). Key rules include:</p>
+            <h2>What is <strong>Retrieval-Augmented Generation (RAG)</strong>?</h2>
+            <p><strong>RAG</strong> is a hybrid AI architecture that combines two steps:</p>
             <ul>
-                <li>Players can only place pieces on the edges of the board</li>
-                <li>When placing a piece, you must push existing pieces in a straight line</li>
-                <li>Pieces that are pushed off the opposite edge are removed</li>
-                <li>First player to create a line of five wins</li>
+                <li><strong>Retrieval</strong>: fetch relevant documents from a knowledge base.</li>
+                <li><strong>Generation</strong>: use a language model to generate responses based on the retrieved documents.</li>
+            </ul>
+            <p>This architecture offers more grounded and factual outputs than standalone language models.</p>
+
+            <h2>What is <strong>MS MARCO</strong>?</h2>
+            <p><strong>MS MARCO</strong> (Microsoft MAchine Reading COmprehension) is a large-scale dataset for training and evaluating machine reading comprehension and retrieval models. It contains real user queries with human-generated answers, making it ideal for building question-answering systems.</p>
+
+            <h2>Project Result</h2>
+            <p>We fine-tuned both the retrieval and generation components of our RAG system. Using the MS MARCO dataset, we achieved a <strong>7.1% improvement</strong> in <strong>MRR</strong>—a key evaluation metric that measures how highly the correct answer appears in the list of results. The improvement demonstrates enhanced precision and relevance of the generated content.</p>
+
+            <h2>Business & Communication Insights</h2>
+            <p>While the technical result was valuable, the course taught us how to better manage and present our work in business environments. Here are some tools and concepts that made the biggest impact:</p>
+
+            <ul>
+                <li><strong>Stakeholder Map</strong>: A diagram showing all parties involved in or affected by the project. Helps guide communication strategy.</li>
+                <li><strong>Persona</strong>: A fictional user profile used to design human-centered solutions tailored to user needs.</li>
+                <li><strong>Customer Journey Map</strong>: A visual overview of the customer’s experience across various touchpoints with the system.</li>
+                <li><strong>GANTT Chart</strong>: A project timeline view showing tasks, durations, and dependencies over time.</li>
+                <li><strong>Work Breakdown Structure (WBS)</strong>: A hierarchical decomposition of project deliverables and tasks.</li>
+                <li><strong>Deliverable</strong>: A tangible output (like a presentation or model) expected at a certain stage of the project.</li>
             </ul>
 
-            <h3>Strategic Complexity</h3>
-            <p>Despite its simple rules, Quixo presents significant strategic challenges:</p>
-            <ul>
-                <li>Large state space (3^25 possible board configurations)</li>
-                <li>Complex move interactions due to pushing mechanics</li>
-                <li>Need to balance offensive and defensive strategies</li>
-                <li>Difficulty in evaluating board positions</li>
-            </ul>
+            <h2>Presentation Tip That Changed My Perspective</h2>
+            <p>As engineers, we often build our presentations like research papers—starting with problem definitions and ending with results. However, the most valuable business insight we gained was this:</p>
+            <blockquote><em>"Your punchline—the core result—should come first."</em></blockquote>
+            <p>Business stakeholders want impact early. Lead with your improvement, then explain how you achieved it.</p>
 
-            <h2>The Min-Max Algorithm</h2>
-            <h3>Basic Principles</h3>
-            <p>The Min-Max algorithm is a fundamental approach in game theory that assumes both players play optimally. It works by:</p>
-            <ol>
-                <li>Exploring all possible moves to a certain depth</li>
-                <li>Evaluating each resulting position</li>
-                <li>Choosing the move that maximizes the player's advantage (or minimizes the opponent's advantage)</li>
-            </ol>
-
-            <h3>Implementation Details</h3>
-            <pre><code>
-def minimax(board, depth, is_maximizing, alpha, beta):
-    if depth == 0 or game_over(board):
-        return evaluate_position(board)
-    
-    if is_maximizing:
-        max_eval = float('-inf')
-        for move in get_possible_moves(board):
-            new_board = make_move(board, move)
-            eval = minimax(new_board, depth - 1, False, alpha, beta)
-            max_eval = max(max_eval, eval)
-            alpha = max(alpha, eval)
-            if beta <= alpha:
-                break  # Alpha-beta pruning
-        return max_eval
-    else:
-        min_eval = float('inf')
-        for move in get_possible_moves(board):
-            new_board = make_move(board, move)
-            eval = minimax(new_board, depth - 1, True, alpha, beta)
-            min_eval = min(min_eval, eval)
-            beta = min(beta, eval)
-            if beta <= alpha:
-                break  # Alpha-beta pruning
-        return min_eval
-            </code></pre>
-
-            <h2>Position Evaluation Function</h2>
-            <h3>Heuristic Design</h3>
-            <p>Creating an effective evaluation function is crucial for Min-Max success. Our evaluation considers multiple factors:</p>
-            <ul>
-                <li><strong>Line Threats:</strong> Count potential winning lines for each player</li>
-                <li><strong>Center Control:</strong> Bonus for controlling central positions</li>
-                <li><strong>Mobility:</strong> Number of available moves</li>
-                <li><strong>Piece Density:</strong> Concentration of pieces in strategic areas</li>
-            </ul>
-
-            <h3>Weighted Scoring</h3>
-            <pre><code>
-def evaluate_position(board):
-    score = 0
-    
-    # Check for immediate wins/losses
-    if check_win(board, PLAYER):
-        return 1000
-    elif check_win(board, OPPONENT):
-        return -1000
-    
-    # Evaluate line threats
-    score += count_line_threats(board, PLAYER) * 100
-    score -= count_line_threats(board, OPPONENT) * 100
-    
-    # Center control bonus
-    score += count_center_pieces(board, PLAYER) * 10
-    score -= count_center_pieces(board, OPPONENT) * 10
-    
-    # Mobility factor
-    score += len(get_possible_moves(board)) * 5
-    
-    return score
-            </code></pre>
-
-            <h2>Alpha-Beta Pruning</h2>
-            <h3>Optimization Technique</h3>
-            <p>Alpha-beta pruning significantly improves Min-Max performance by eliminating branches that won't affect the final decision:</p>
-            <ul>
-                <li><strong>Alpha:</strong> Best value the maximizing player can guarantee</li>
-                <li><strong>Beta:</strong> Best value the minimizing player can guarantee</li>
-                <li><strong>Pruning:</strong> Stop exploring when beta ≤ alpha</li>
-            </ul>
-
-            <h3>Performance Impact</h3>
-            <p>Alpha-beta pruning can reduce the search space by 50-90%, allowing deeper search depths and better play quality.</p>
-
-            <h2>Reinforcement Learning Enhancement</h2>
-            <h3>Self-Play Training</h3>
-            <p>We enhanced the basic Min-Max approach with reinforcement learning through self-play:</p>
-            <ol>
-                <li>Train a neural network to evaluate positions</li>
-                <li>Use the network to guide Min-Max search</li>
-                <li>Generate training data through self-play games</li>
-                <li>Iteratively improve the evaluation function</li>
-            </ol>
-
-            <h3>Neural Network Architecture</h3>
-            <pre><code>
-class QuixoEvaluator(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.conv1 = nn.Conv2d(3, 64, 3, padding=1)
-        self.conv2 = nn.Conv2d(64, 128, 3, padding=1)
-        self.conv3 = nn.Conv2d(128, 256, 3, padding=1)
-        self.fc1 = nn.Linear(256 * 5 * 5, 512)
-        self.fc2 = nn.Linear(512, 256)
-        self.fc3 = nn.Linear(256, 1)
-        
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        x = F.relu(self.conv2(x))
-        x = F.relu(self.conv3(x))
-        x = x.view(x.size(0), -1)
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = torch.tanh(self.fc3(x))
-        return x
-            </code></pre>
-
-            <h2>Training Process</h2>
-            <h3>Data Generation</h3>
-            <p>Training data was generated through self-play between different versions of the agent:</p>
-            <ul>
-                <li>Random vs Min-Max (depth 3)</li>
-                <li>Min-Max (depth 3) vs Min-Max (depth 5)</li>
-                <li>Neural network vs Min-Max</li>
-                <li>Self-play between neural network versions</li>
-            </ul>
-
-            <h3>Training Configuration</h3>
-            <ul>
-                <li>Learning rate: 0.001 with exponential decay</li>
-                <li>Batch size: 64</li>
-                <li>Epochs: 1000 with early stopping</li>
-                <li>Optimizer: Adam</li>
-                <li>Loss function: Mean Squared Error</li>
-            </ul>
-
-            <h2>Results and Analysis</h2>
-            <h3>Performance Metrics</h3>
-            <p>Our enhanced Min-Max agent achieved impressive results:</p>
-            <ul>
-                <li><strong>Win Rate vs Random:</strong> 95.2%</li>
-                <li><strong>Win Rate vs Basic Min-Max:</strong> 78.5%</li>
-                <li><strong>Average Game Length:</strong> 12.3 moves</li>
-                <li><strong>Search Depth:</strong> 6-8 moves ahead</li>
-            </ul>
-
-            <h3>Strategic Analysis</h3>
-            <p>The agent developed several sophisticated strategies:</p>
-            <ul>
-                <li><strong>Defensive Play:</strong> Blocking opponent threats while building own lines</li>
-                <li><strong>Center Control:</strong> Prioritizing central positions for flexibility</li>
-                <li><strong>Multi-threat Creation:</strong> Setting up multiple winning opportunities</li>
-                <li><strong>Endgame Mastery:</strong> Precise calculation in complex positions</li>
-            </ul>
-
-            <h2>Comparison with Other Approaches</h2>
-            <table>
-                <tr>
-                    <th>Method</th>
-                    <th>Win Rate vs Random</th>
-                    <th>Search Time</th>
-                    <th>Memory Usage</th>
-                </tr>
-                <tr>
-                    <td>Random Play</td>
-                    <td>50.0%</td>
-                    <td>0.1ms</td>
-                    <td>1KB</td>
-                </tr>
-                <tr>
-                    <td>Basic Min-Max (depth 3)</td>
-                    <td>72.3%</td>
-                    <td>15ms</td>
-                    <td>2MB</td>
-                </tr>
-                <tr>
-                    <td>Min-Max + Alpha-Beta (depth 5)</td>
-                    <td>84.7%</td>
-                    <td>45ms</td>
-                    <td>5MB</td>
-                </tr>
-                <tr>
-                    <td>Enhanced Min-Max + NN</td>
-                    <td>95.2%</td>
-                    <td>25ms</td>
-                    <td>8MB</td>
-                </tr>
-            </table>
-
-            <h2>Practical Implementation</h2>
-            <h3>Code Structure</h3>
-            <p>The implementation follows a modular design:</p>
-            <ul>
-                <li><strong>Game Engine:</strong> Core game logic and move validation</li>
-                <li><strong>AI Module:</strong> Min-Max algorithm with alpha-beta pruning</li>
-                <li><strong>Evaluation:</strong> Neural network and heuristic evaluation</li>
-                <li><strong>Training:</strong> Self-play data generation and model training</li>
-            </ul>
-
-            <h3>Performance Optimization</h3>
-            <p>Several optimizations were implemented for real-time play:</p>
-            <ul>
-                <li>Move ordering to improve alpha-beta pruning</li>
-                <li>Transposition tables for position caching</li>
-                <li>Iterative deepening for time management</li>
-                <li>Parallel search for multiple cores</li>
-            </ul>
-
-            <h2>Challenges and Solutions</h2>
-            <h3>Computational Complexity</h3>
-            <p><strong>Challenge:</strong> Exponential growth of search space with depth.</p>
-            <p><strong>Solution:</strong> Alpha-beta pruning, move ordering, and iterative deepening.</p>
-
-            <h3>Evaluation Function Design</h3>
-            <p><strong>Challenge:</strong> Creating accurate position evaluation without perfect knowledge.</p>
-            <p><strong>Solution:</strong> Machine learning approach with self-play training data.</p>
-
-            <h3>Real-time Constraints</h3>
-            <p><strong>Challenge:</strong> Making decisions within reasonable time limits.</p>
-            <p><strong>Solution:</strong> Time management and adaptive search depth.</p>
-
-            <h2>Future Improvements</h2>
-            <h3>Monte Carlo Tree Search (MCTS)</h3>
-            <p>MCTS could provide an alternative to Min-Max, potentially offering better performance in complex positions.</p>
-
-            <h3>Deep Reinforcement Learning</h3>
-            <p>End-to-end learning approaches like AlphaZero could eliminate the need for hand-crafted evaluation functions.</p>
-
-            <h3>Multi-Agent Training</h3>
-            <p>Training against diverse opponents could improve robustness and generalization.</p>
-
-            <h2>Conclusion</h2>
-            <p>The combination of traditional Min-Max algorithms with modern reinforcement learning techniques proves highly effective for board game AI. Our Quixo agent demonstrates that even relatively simple games can benefit from sophisticated AI approaches. The key to success lies in balancing search depth, evaluation accuracy, and computational efficiency while maintaining the strategic depth that makes the game interesting.</p>
-
-            <p>This work opens possibilities for applying similar techniques to other strategic games and highlights the importance of combining classical algorithms with modern machine learning approaches in AI development.</p>
-
-            <h2>Project Links</h2>
-            <div class="project-links">
-                <a href="https://github.com/HOSSENkhodadadi/Quixo_Game_Player_Min_Max" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
-                <a href="https://drive.google.com/file/d/1yF6i6cwjFwAmKHOk7Q_PkM34PqJAAX7T/view?usp=sharing" target="_blank" class="project-link">
-                    <i class="fas fa-file-pdf"></i> Download CV
-                </a>
-                <a href="https://www.linkedin.com/in/hosseinekhodadadi/" target="_blank" class="project-link">
-                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                </a>
-            </div>
-
-            <h2>References</h2>
-            <p>1. Russell, S., & Norvig, P. "Artificial Intelligence: A Modern Approach." Pearson, 2020.</p>
-            <p>2. Silver, D., et al. "Mastering the game of Go with deep neural networks and tree search." Nature, 2016.</p>
-            <p>3. Browne, C., et al. "A survey of Monte Carlo tree search methods." IEEE Transactions on Computational Intelligence and AI in Games, 2012.</p>
-            <p>4. Quixo Game Rules: https://boardgamegeek.com/boardgame/4335/quixo</p>
+            <h2>Final Reflection</h2>
+            <p>This project taught me that technical excellence is only half the story. The other half lies in communication, user-centric thinking, and project management. The ADSP course and collaboration with LINKS Foundation helped me grow not just as a machine learning engineer—but also as a product-minded professional ready to deliver value in real-world contexts.</p>
         </div>
     </div>
 
-    <script src="../assets/js/script.js"></script>
 </body>
 </html>
