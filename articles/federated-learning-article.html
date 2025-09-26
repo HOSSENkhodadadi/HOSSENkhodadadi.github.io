@@ -117,66 +117,65 @@
         </div>
 
         <div class="article-content">
-            <h2>Abstract</h2>
-            <p>Federated Learning (FL) has emerged as a promising paradigm for training machine learning models across distributed devices while preserving data privacy. However, one of the major challenges in FL is achieving good generalization performance due to data heterogeneity and non-IID distributions across clients. This article presents a novel approach using corrective gradient weights to improve model generalization in federated learning environments.</p>
+      <p>
+        As engineers and data scientists, we often focus deeply on model development and evaluation—sometimes at the expense of understanding how to communicate our work effectively to non-technical stakeholders. This realization hit home during my participation in the <strong>Artificial Intelligence and Data Science Prototype (ADSP)</strong> course at <strong>Politecnico di Torino</strong>, developed in collaboration with the <strong>LINKS Foundation</strong>.
+      </p>
 
-            <h2>Introduction</h2>
-            <p>Federated Learning enables multiple parties to collaboratively train a shared model without sharing their raw data. While this approach addresses privacy concerns, it introduces several challenges including statistical heterogeneity, communication efficiency, and convergence issues. The non-independent and identically distributed (non-IID) nature of data across clients often leads to poor generalization performance.</p>
+      <p>
+        This program not only deepened our technical skills but also helped us translate research into real-world, business-relevant outcomes. One of the key achievements of our team was enhancing a <strong>Retrieval-Augmented Generation (RAG)</strong> system on the <strong>MS MARCO</strong> dataset, resulting in a <strong>7.1% improvement</strong> in the <strong>Mean Reciprocal Rank (MRR)</strong> metric.
+      </p>
 
-            <h2>Methodology</h2>
-            <h3>Corrective Gradient Weights</h3>
-            <p>Our approach introduces corrective gradient weights that adaptively adjust the contribution of each client's gradient during the aggregation process. These weights are calculated based on:</p>
-            <ul>
-                <li>Local model performance metrics</li>
-                <li>Data distribution characteristics</li>
-                <li>Gradient magnitude and direction</li>
-                <li>Historical convergence patterns</li>
-            </ul>
+      <h2>What is <strong>Retrieval-Augmented Generation (RAG)</strong>?</h2>
+      <p>
+        <strong>RAG</strong> is a hybrid AI architecture that combines two steps:
+      </p>
+      <ul>
+        <li><strong>Retrieval</strong>: fetching relevant documents from a knowledge base.</li>
+        <li><strong>Generation</strong>: using a language model to generate responses based on those documents.</li>
+      </ul>
+      <p>
+        This architecture offers more grounded and factual outputs compared to standalone generative models.
+      </p>
 
-            <h3>Implementation Details</h3>
-            <p>The corrective weights are computed using a combination of statistical measures and machine learning techniques. We employ a meta-learning approach where a small neural network learns to predict optimal weights based on client characteristics and training dynamics.</p>
+      <h2>What is <strong>MS MARCO</strong>?</h2>
+      <p>
+        <strong>MS MARCO</strong> (Microsoft MAchine Reading COmprehension) is a large-scale dataset built for training and evaluating machine reading comprehension and information retrieval systems. It contains real-world user queries and human-generated answers.
+      </p>
 
-            <h2>Experimental Results</h2>
-            <p>We conducted extensive experiments on several benchmark datasets including CIFAR-10, CIFAR-100, and ImageNet. Our results show:</p>
-            <ul>
-                <li>15-25% improvement in test accuracy compared to standard FedAvg</li>
-                <li>Faster convergence rates across different data distributions</li>
-                <li>Better performance on edge cases and minority classes</li>
-                <li>Maintained communication efficiency</li>
-            </ul>
+      <h2>Project Result</h2>
+      <p>
+        We fine-tuned both the retrieval and generation components of the RAG pipeline and evaluated it on MS MARCO. The result was a <strong>7.1% increase in MRR</strong>, demonstrating more accurate and relevant answer generation. Tools like Hugging Face Transformers, FAISS, and PyTorch were part of the tech stack used in this process.
+      </p>
 
-            <h2>Technical Implementation</h2>
-            <p>The implementation uses PyTorch and includes custom federated learning algorithms. Key components include:</p>
-            <ul>
-                <li>Client-side gradient computation with corrective weighting</li>
-                <li>Server-side aggregation with adaptive weight adjustment</li>
-                <li>Meta-learning module for weight prediction</li>
-                <li>Evaluation framework for measuring generalization</li>
-            </ul>
+      <h2>Business and Communication Takeaways</h2>
+      <p>
+        While technical improvements matter, the course taught us that success also depends on effectively communicating our work to different audiences. Below are a few tools and concepts we used:
+      </p>
+      <ul>
+        <li><strong>Stakeholder Map</strong>: Visualizes people and organizations affected by or influencing the project.</li>
+        <li><strong>Persona</strong>: Fictional user profiles used to design human-centered solutions.</li>
+        <li><strong>Customer Journey Map</strong>: Illustrates how a user interacts with the system across different stages.</li>
+        <li><strong>GANTT Chart</strong>: A timeline-based project planning tool showing tasks and milestones.</li>
+        <li><strong>Work Breakdown Structure (WBS)</strong>: Hierarchical decomposition of project deliverables into smaller components.</li>
+        <li><strong>Deliverable</strong>: A concrete output, such as a presentation, report, or model.</li>
+      </ul>
 
-            <h2>Conclusion</h2>
-            <p>Our proposed corrective gradient weights approach demonstrates significant improvements in federated learning generalization. The method is particularly effective in scenarios with high data heterogeneity and provides a practical solution for real-world federated learning deployments. Future work will explore the application of this approach to other distributed learning paradigms and investigate theoretical guarantees for convergence.</p>
+      <h2>One Crucial Presentation Tip</h2>
+      <p>
+        As engineers, we tend to follow a build-up style when presenting: start with background, describe methods, show metrics, and finally present the results. But the course taught us something very different:
+      </p>
+      <blockquote><em>The punchline should come at the beginning of your presentation.</em></blockquote>
+      <p>
+        Stakeholders from the business side have limited time and attention spans. By opening with your key improvement, you capture their interest early and leave a lasting impression.
+      </p>
 
-            <h2>Project Links</h2>
-            <div class="project-links">
-                <a href="https://github.com/HOSSENkhodadadi/Projects/tree/main/A%20Novel%20Approach%20for%20Improving%20Generalization%20in%20Federated" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
-                <a href="https://drive.google.com/file/d/1yF6i6cwjFwAmKHOk7Q_PkM34PqJAAX7T/view?usp=sharing" target="_blank" class="project-link">
-                    <i class="fas fa-file-pdf"></i> Download Paper
-                </a>
-                <a href="https://www.linkedin.com/in/hosseinekhodadadi/" target="_blank" class="project-link">
-                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                </a>
-            </div>
-
-            <h2>References</h2>
-            <p>1. McMahan, B., et al. "Communication-efficient learning of deep networks from decentralized data." AISTATS 2017.</p>
-            <p>2. Li, T., et al. "Federated optimization in heterogeneous networks." MLSys 2020.</p>
-            <p>3. Karimireddy, S. P., et al. "SCAFFOLD: Stochastic controlled averaging for federated learning." ICML 2020.</p>
-        </div>
+      <h2>Final Thoughts</h2>
+      <p>
+        Technical accuracy is essential, but it's not the whole story. This project showed me how combining technical development with human-centered design, ethical awareness, and communication skills leads to much greater impact. I’m thankful for this learning experience at Politecnico di Torino and the LINKS Foundation—where I learned to not just build solutions, but also deliver them meaningfully.
+      </p>
     </div>
+  </div>
 
-    <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/script.js"></script>
 </body>
 </html>
