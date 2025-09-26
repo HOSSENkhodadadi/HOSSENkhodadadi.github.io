@@ -1,95 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From Retrieval to Results – Hossein Khodadadi</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="icon" href="../images/x-icon.webp" type="image/x-icon">
-    <style>
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: white;
-            margin-top: 80px;
-        }
-        .article-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #3498db;
-        }
-        .article-header h1 {
-            color: #333;
-            font-size: 2.2em;
-        }
-        .article-meta {
-            color: #666;
-            font-style: italic;
-        }
-        .article-content {
-            line-height: 1.8;
-            color: #444;
-        }
-        .article-content h2 {
-            color: #3498db;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        .article-content strong {
-            color: #000;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>From Retrieval to Results – Hossein Khodadadi</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="../images/x-icon.webp" type="image/x-icon" />
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: white;
+      margin-top: 80px;
+    }
+    .article-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #3498db;
+    }
+    .article-header h1 {
+      color: #333;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .article-meta {
+      color: #666;
+      font-style: italic;
+    }
+    .article-content {
+      line-height: 1.8;
+      color: #444;
+    }
+    .article-content h2 {
+      color: #3498db;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .article-content strong {
+      color: #000;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      color: #2980b9;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="hamburger-menu" id="hamburger-menu">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#education">Education</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#articles">Articles</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="article-container">
-        <div class="article-header">
-            <h1>From Retrieval to Results: Bridging AI and Business with RAG on MS MARCO</h1>
-            <div class="article-meta">By Hossein Khodadadi</div>
-        </div>
+  <div class="article-container">
+    <a href="../index.html#articles" class="back-link">← Back to Articles</a>
 
-        <div class="article-content">
-            <p>As engineers and data scientists, we often focus deeply on model development and evaluation—sometimes at the expense of understanding how to communicate our work effectively to non-technical stakeholders. This realization hit home during my participation in the <strong>Artificial Intelligence and Data Science Prototype (ADSP)</strong> course at <strong>Politecnico di Torino</strong>, developed in collaboration with the <strong>LINKS Foundation</strong>.</p>
-
-            <p>This program not only deepened our technical skills but also helped us translate research into real-world, business-relevant outcomes. One of the key achievements of our team was enhancing a <strong>Retrieval-Augmented Generation (RAG)</strong> system on the <strong>MS MARCO</strong> dataset, resulting in a <strong>7.1% improvement</strong> in the <strong>Mean Reciprocal Rank (MRR)</strong> metric.</p>
-
-            <h2>What is <strong>Retrieval-Augmented Generation (RAG)</strong>?</h2>
-            <p><strong>RAG</strong> is a hybrid AI architecture that combines two steps:</p>
-            <ul>
-                <li><strong>Retrieval</strong>: fetch relevant documents from a knowledge base.</li>
-                <li><strong>Generation</strong>: use a language model to generate responses based on the retrieved documents.</li>
-            </ul>
-            <p>This architecture offers more grounded and factual outputs than standalone language models.</p>
-
-            <h2>What is <strong>MS MARCO</strong>?</h2>
-            <p><strong>MS MARCO</strong> (Microsoft MAchine Reading COmprehension) is a large-scale dataset for training and evaluating machine reading comprehension and retrieval models. It contains real user queries with human-generated answers, making it ideal for building question-answering systems.</p>
-
-            <h2>Project Result</h2>
-            <p>We fine-tuned both the retrieval and generation components of our RAG system. Using the MS MARCO dataset, we achieved a <strong>7.1% improvement</strong> in <strong>MRR</strong>—a key evaluation metric that measures how highly the correct answer appears in the list of results. The improvement demonstrates enhanced precision and relevance of the generated content.</p>
-
-            <h2>Business & Communication Insights</h2>
-            <p>While the technical result was valuable, the course taught us how to better manage and present our work in business environments. Here are some tools and concepts that made the biggest impact:</p>
-
-            <ul>
-                <li><strong>Stakeholder Map</strong>: A diagram showing all parties involved in or affected by the project. Helps guide communication strategy.</li>
-                <li><strong>Persona</strong>: A fictional user profile used to design human-centered solutions tailored to user needs.</li>
-                <li><strong>Customer Journey Map</strong>: A visual overview of the customer’s experience across various touchpoints with the system.</li>
-                <li><strong>GANTT Chart</strong>: A project timeline view showing tasks, durations, and dependencies over time.</li>
-                <li><strong>Work Breakdown Structure (WBS)</strong>: A hierarchical decomposition of project deliverables and tasks.</li>
-                <li><strong>Deliverable</strong>: A tangible output (like a presentation or model) expected at a certain stage of the project.</li>
-            </ul>
-
-            <h2>Presentation Tip That Changed My Perspective</h2>
-            <p>As engineers, we often build our presentations like research papers—starting with problem definitions and ending with results. However, the most valuable business insight we gained was this:</p>
-            <blockquote><em>"Your punchline—the core result—should come first."</em></blockquote>
-            <p>Business stakeholders want impact early. Lead with your improvement, then explain how you achieved it.</p>
-
-            <h2>Final Reflection</h2>
-            <p>This project taught me that technical excellence is only half the story. The other half lies in communication, user-centric thinking, and project management. The ADSP course and collaboration with LINKS Foundation helped me grow not just as a machine learning engineer—but also as a product-minded professional ready to deliver value in real-world contexts.</p>
-        </div>
+    <div class="article-header">
+      <h1>From Retrieval to Results: Bridging AI and Business with RAG on MS MARCO</h1>
+      <div class="article-meta">By Hossein Khodadadi</div>
     </div>
 
+    <div class="article-content">
+      <p>
+        As engineers and data scientists, we often focus deeply on model development and evaluation—sometimes at the expense of understanding how to communicate our work effectively to non-technical stakeholders. This realization hit home during my participation in the <strong>Artificial Intelligence and Data Science Prototype (ADSP)</strong> course at <strong>Politecnico di Torino</strong>, developed in collaboration with the <strong>LINKS Foundation</strong>.
+      </p>
+
+      <p>
+        This program not only deepened our technical skills but also helped us translate research into real-world, business-relevant outcomes. One of the key achievements of our team was enhancing a <strong>Retrieval-Augmented Generation (RAG)</strong> system on the <strong>MS MARCO</strong> dataset, resulting in a <strong>7.1% improvement</strong> in the <strong>Mean Reciprocal Rank (MRR)</strong> metric.
+      </p>
+
+      <h2>What is <strong>Retrieval-Augmented Generation (RAG)</strong>?</h2>
+      <p>
+        <strong>RAG</strong> is a hybrid AI architecture that combines two steps:
+      </p>
+      <ul>
+        <li><strong>Retrieval</strong>: fetching relevant documents from a knowledge base.</li>
+        <li><strong>Generation</strong>: using a language model to generate responses based on those documents.</li>
+      </ul>
+      <p>
+        This architecture offers more grounded and factual outputs compared to standalone generative models.
+      </p>
+
+      <h2>What is <strong>MS MARCO</strong>?</h2>
+      <p>
+        <strong>MS MARCO</strong> (Microsoft MAchine Reading COmprehension) is a large-scale dataset built for training and evaluating machine reading comprehension and information retrieval systems. It contains real-world user queries and human-generated answers.
+      </p>
+
+      <h2>Project Result</h2>
+      <p>
+        We fine-tuned both the retrieval and generation components of the RAG pipeline and evaluated it on MS MARCO. The result was a <strong>7.1% increase in MRR</strong>, demonstrating more accurate and relevant answer generation. Tools like Hugging Face Transformers, FAISS, and PyTorch were part of the tech stack used in this process.
+      </p>
+
+      <h2>Business and Communication Takeaways</h2>
+      <p>
+        While technical improvements matter, the course taught us that success also depends on effectively communicating our work to different audiences. Below are a few tools and concepts we used:
+      </p>
+      <ul>
+        <li><strong>Stakeholder Map</strong>: Visualizes people and organizations affected by or influencing the project.</li>
+        <li><strong>Persona</strong>: Fictional user profiles used to design human-centered solutions.</li>
+        <li><strong>Customer Journey Map</strong>: Illustrates how a user interacts with the system across different stages.</li>
+        <li><strong>GANTT Chart</strong>: A timeline-based project planning tool showing tasks and milestones.</li>
+        <li><strong>Work Breakdown Structure (WBS)</strong>: Hierarchical decomposition of project deliverables into smaller components.</li>
+        <li><strong>Deliverable</strong>: A concrete output, such as a presentation, report, or model.</li>
+      </ul>
+
+      <h2>One Crucial Presentation Tip</h2>
+      <p>
+        As engineers, we tend to follow a build-up style when presenting: start with background, describe methods, show metrics, and finally present the results. But the course taught us something very different:
+      </p>
+      <blockquote><em>The punchline should come at the beginning of your presentation.</em></blockquote>
+      <p>
+        Stakeholders from the business side have limited time and attention spans. By opening with your key improvement, you capture their interest early and leave a lasting impression.
+      </p>
+
+      <h2>Final Thoughts</h2>
+      <p>
+        Technical accuracy is essential, but it's not the whole story. This project showed me how combining technical development with human-centered design, ethical awareness, and communication skills leads to much greater impact. I’m thankful for this learning experience at Politecnico di Torino and the LINKS Foundation—where I learned to not just build solutions, but also deliver them meaningfully.
+      </p>
+    </div>
+  </div>
+
+  <script src="../assets/js/script.js"></script>
 </body>
 </html>
